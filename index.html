@@ -2,33 +2,64 @@
 <html>
 <head>
 	<title>Employee Information</title>
+  
+  <!-- Bootstrap Links -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
 </head>
 <body>
-	
-	<header>Employee Information</header>
+    <div class="panel panel-default">
+        <div class="panel-heading">Current Employees</div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Role</th>
+                    <th>Start Date</th>
+                    <th>Months Worked</th>
+                    <th>Monthly Rate ($)</th>
+                    <th>Total Billed ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-	<div class="container">
-		
-		<div class="row">
-			
-			<div class="col-lg-12" id="employList"></div>
+  <div class="panel panel-default">
+  	<div class="panel-heading">Add Employee</div>
+  	<div class="panel-body">
+    	<form>
+            <div class="form-group">
+              <label for="email">Employee Name</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="role">Role</label>
+              <input type="role" class="form-control" id="role">
+            </div>
+            <div class="form-group">
+                <label for="start-date">Start Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input type="start-date" class="form-control" id="start-date">
+            </div>
+            <div class="form-group">
+                <label for="rate">Monthly Rate</label>
+                <input type="ratee" class="form-control" id="rate">
+            </div>
 
-			<div class="col-lg-12" id="addEmployee">
-				<label for="name">Name: </label>
-				<input type="text" id="name"><br>
-
-				<label for="role">Role: </label>
-				<input type="text" id="role"><br>
-
-				<label for="startDate">Start Date: </label>
-				<input type="text" id="startDate"><br>
-
-				<label for="monthlyRate">Monlthly Rate: </label>
-				<input type="text" id="monthlyRate"><br>
-
-				<input type="submit" id="submit" text="Submit">
-			</div>
-		</div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>          
+  	</div>
 	</div>
+	
+
 </body>
 </html>
