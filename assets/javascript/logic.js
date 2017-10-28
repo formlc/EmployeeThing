@@ -44,7 +44,11 @@ $(document).ready(function() {
     	var startDate = snapshot.val().startDate;
     	var monthlyRate = snapshot.val().monthlyRate;
 
-    	$("#tbody").append("<tr> <td>" + name + "</td><td>" + role + "</td><td>" + startDate + "</td><td>" + monthlyRate + "</td>");
+    	var monthsWorked = moment().diff(moment(startDate), 'months')
+    	console.log(monthsWorked);
+    	var totalBilled = monthsWorked * monthlyRate;
+
+    	$("#tbody").append("<tr> <td>" + name + "</td><td>" + role + "</td><td>" + startDate + "</td><td>" + monthsWorked + "</td><td>" + monthlyRate + "</td><td>" + totalBilled + "</td>" );
     });
 
 
