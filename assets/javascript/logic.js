@@ -21,8 +21,8 @@ $(document).ready(function() {
 
     	var name = $("#name").val().trim();
     	var role = $("#role").val().trim();
-    	var startDate = $("#startDate").val().trim();
-    	var monthlyRate = $("#monthlyRate").val().trim();
+    	var startDate = $("#start-date").val().trim();
+    	var monthlyRate = $("#rate").val().trim();
 
     	database.ref().push({
     		name: name,
@@ -31,13 +31,21 @@ $(document).ready(function() {
     		monthlyRate: monthlyRate
     	});
 
+    	
+
 
 
     });
 
     database.ref().on("child_added", function(snapshot) {
-    	console.log(snapshot.getChildren());
-    })
+    	console.log(snapshot.val())
+    	var role = snapshot.val().role;
+    	var name = snapshot.val().name;
+    	var startDate = snapshot.val().startDate;
+    	var monthlyRate = snapshot.val().monthlyRate;
+
+    	$("#tbody").append("<tr> <td>" + name + "</td><td>" + role + "</td><td>" + startDate + "</td><td>" + monthlyRate + "</td>");
+    });
 
 
 });
